@@ -1,11 +1,21 @@
 package InteractiveStory;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Console {
+    private final Scanner input;
+    private final PrintStream output;
 
-    public static void print(String output, Object... args) {
+    public Console(InputStream in, PrintStream out) {
+        this.input = new Scanner(in);
+        this.output = out;
+    }
+
+    public static String print(String output, Object... args) {
         System.out.printf(output, args);
+        return output;
     }
 
     public static void println(String output, Object... args) {

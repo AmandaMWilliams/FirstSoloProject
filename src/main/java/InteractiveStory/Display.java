@@ -1,6 +1,6 @@
 package InteractiveStory;
 
-public class Display {
+public class Display extends Storyline{
     private Console console;
     private boolean storyStarted = true;
 
@@ -8,20 +8,16 @@ public class Display {
         this.console = console;
     }
 
-    public String userWelcome(String name) {
-        String output = console.print("Hi, " + name + ". Let's create a story.");
-        return output;
-    }
 
-    public String runLoginMenu() {
-        String output = null;
-        while (storyStarted) {
+    public void runLoginMenu() {
             console.print("\n" +
                     "Welcome to your story!\n");
             String name = console.getStringInput("Please enter your name:  ");
-            output = userWelcome(name);
-            console.println(output);
-        }
-        return output;
+            userWelcome(name);
+    }
+
+    public void userWelcome(String name) {
+        console.print("Hi, " + name + ". Let's start the story.\n\n");
+        storyScript1(name);
     }
 }

@@ -10,4 +10,6 @@ public class LeftPath {
                 name + " found a chancleta!\n" +
                 "** Chancleta stored in pocket **");
     }
+
+
 }

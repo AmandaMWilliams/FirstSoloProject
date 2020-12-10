@@ -6,6 +6,10 @@ import InteractiveStory.tools.Console;
 public class LeftPath {
     private Reader reader;
 
+    public LeftPath(String name) {
+        this(new Reader(name));
+    }
+
     public LeftPath(Reader reader) {
         this.reader = reader;
     }

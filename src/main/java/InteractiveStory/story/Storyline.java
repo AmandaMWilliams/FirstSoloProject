@@ -35,10 +35,11 @@ public class Storyline {
         switch(selection){
             case 1:
                 LeftPath leftPath = new LeftPath(name);
-                LeftPath.leftPath1(name);
+                leftPath.leftPath1(name);
                 break;
             case 2:
-                RightPath.rightPath1(name);
+                RightPath rightPath = new RightPath(name);
+                rightPath.rightPath1(name);
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");

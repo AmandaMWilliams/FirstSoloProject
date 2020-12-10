@@ -1,6 +1,6 @@
 package InteractiveStory.tools;
 
-import InteractiveStory.Storyline;
+import InteractiveStory.story.Storyline;
 
 public class Display extends Storyline {
     private Console console;

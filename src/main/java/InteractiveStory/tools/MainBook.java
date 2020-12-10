@@ -1,4 +1,4 @@
-package InteractiveStory;
+package InteractiveStory.tools;
 
 public class MainBook {
     public static void main(String[] args){

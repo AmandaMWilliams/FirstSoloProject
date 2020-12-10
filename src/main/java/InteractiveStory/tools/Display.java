@@ -1,6 +1,8 @@
-package InteractiveStory;
+package InteractiveStory.tools;
 
-public class Display extends Storyline{
+import InteractiveStory.Storyline;
+
+public class Display extends Storyline {
     private Console console;
     private boolean storyStarted = true;
 
@@ -18,6 +20,10 @@ public class Display extends Storyline{
 
     public void userWelcome(String name) {
         console.print("Hi, " + name + ". Let's start the story.\n\n");
+        name = "Little Red Riding " + name;
         storyScript1(name);
+        storyDecision1();
     }
+
+
 }

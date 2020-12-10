@@ -1,4 +1,4 @@
-package InteractiveStory;
+package InteractiveStory.tools;
 
 import java.io.InputStream;
 import java.io.PrintStream;

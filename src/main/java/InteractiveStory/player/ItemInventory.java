@@ -1,4 +1,4 @@
-package InteractiveStory;
+package InteractiveStory.player;
 
 public class ItemInventory {
 

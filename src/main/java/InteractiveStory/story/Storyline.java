@@ -34,6 +34,7 @@ public class Storyline {
     private void decision1Switch(Integer selection, String name) {
         switch(selection){
             case 1:
+                LeftPath leftPath = new LeftPath(name);
                 LeftPath.leftPath1(name);
                 break;
             case 2:

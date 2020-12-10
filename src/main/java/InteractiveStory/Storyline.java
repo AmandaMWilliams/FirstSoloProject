@@ -38,10 +38,11 @@ public class Storyline {
                 output = storyline.leftPath1(name);
                 break;
         }
+        return output;
     }
 
     public String leftPath1(String name) {
-        Console.print("You chose the left path. " + name + " followed a butterfly down the sunny path to a moss covered rock.\n" +
+        return Console.print("You chose the left path. " + name + " followed a butterfly down the sunny path to a moss covered rock.\n" +
                 name + " found a chancleta!\n" +
                 "** Chancleta stored in pocket **");
     }

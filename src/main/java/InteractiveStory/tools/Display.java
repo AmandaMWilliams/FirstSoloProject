@@ -22,7 +22,7 @@ public class Display extends Storyline {
         console.print("Hi, " + name + ". Let's start the story.\n\n");
         name = "Little Red Riding " + name;
         storyScript1(name);
-        storyDecision1();
+        storyDecision1(name);
     }
 
 

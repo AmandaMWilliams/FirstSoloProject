@@ -35,7 +35,8 @@ public class Storyline {
         switch(selection){
             case 1:
                 LeftPath leftPath = new LeftPath(name);
-                leftPath.leftPath1(name);
+                leftPath.followButterfly(name);
+                leftPath.getWolfDecision(name);
                 break;
             case 2:
                 RightPath rightPath = new RightPath(name);

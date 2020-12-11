@@ -40,7 +40,7 @@ public class Storyline {
                 break;
             case 2:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.storyEnder1(name);
+                storyEnders.storyEnderRightPath(name);
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");

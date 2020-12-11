@@ -37,7 +37,7 @@ public class StoryContinuers {
         switch (selection) {
             case 1:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.storyEnder2(name);
+                storyEnders.storyEnderWolfChat(name);
                 break;
             case 2:
                 stopAtLake(name);
@@ -69,7 +69,7 @@ public class StoryContinuers {
         switch (selection) {
             case 1:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.storyEnder3(name);
+                storyEnders.storyEnderReachIntoWater(name);
                 break;
             case 2:
                 fishGetTeeth(name);
@@ -91,6 +91,13 @@ public class StoryContinuers {
     }
 
     private void madeItToGrandmas(String name) {
-
+        Console.getIntegerInput("%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
+                "* Knock-knock *\n.\n..\n...\n..\n.\n* Knock-knock *\n\n" +
+                "\"Grandma, I'm here.\" said %s.\n\n" +
+                "\"Come in, my dear\" said the voice from inside.\n\n" +
+                "----------------------------------------\n\n" +
+                "1. Open the door and go inside\n" +
+                "2. Tell Grandma your hands are full from gathering random stuff in the woods\n" +
+                "    and make her open the door for you.", name, name);
     }
 }

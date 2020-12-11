@@ -8,11 +8,11 @@ public class Storyline {
     }
 
     public void storyScript1(String name) {
-        Console.print("Once upon a time, there was a youngster named " + name + ". \n" +
-                name + " was on a special mission to take cookies to grandma's house." +
-                "\nMami reminded " + name + " to beware of the Big Bad Wolf, \n" +
-                "and sent young " + name + " unaccompanied into the dark forest of doom :) .\n\n" +
-                "------------------------------------------------\n\n"
+        Console.print("Once upon a time, there was a youngster named %s.\n" +
+                "%s was on a special mission to take cookies to grandma's house." +
+                "\nMami told %s to beware of DANGER, especially the Big Bad Wolf, \n" +
+                "and sent young %s unaccompanied into the dark forest of doom :) .\n\n" +
+                "------------------------------------------------\n\n", name, name, name, name
         );
     }
 

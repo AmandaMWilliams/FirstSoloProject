@@ -34,13 +34,13 @@ public class Storyline {
     private void decision1Switch(Integer selection, String name) {
         switch(selection){
             case 1:
-                LeftPath leftPath = new LeftPath(name);
-                leftPath.followButterfly(name);
-                leftPath.getWolfDecision(name);
+                StoryContinuers storyContinuers = new StoryContinuers(name);
+                storyContinuers.followButterfly(name);
+                storyContinuers.getWolfDecision(name);
                 break;
             case 2:
-                RightPath rightPath = new RightPath(name);
-                rightPath.rightPath1(name);
+                StoryEnders storyEnders = new StoryEnders(name);
+                storyEnders.storyEnder1(name);
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");

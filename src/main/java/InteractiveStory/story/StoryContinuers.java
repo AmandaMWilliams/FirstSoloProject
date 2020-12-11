@@ -3,15 +3,15 @@ package InteractiveStory.story;
 import InteractiveStory.player.Reader;
 import InteractiveStory.tools.Console;
 
-public class LeftPath {
+public class StoryContinuers {
     private Reader reader;
     private Integer selection;
 
-    public LeftPath(String name) {
+    public StoryContinuers(String name) {
         this(new Reader(name));
     }
 
-    public LeftPath(Reader reader) {
+    public StoryContinuers(Reader reader) {
         this.reader = reader;
     }
 
@@ -36,12 +36,11 @@ public class LeftPath {
     public void encounterWolf(Integer selection, String name) {
         switch (selection) {
             case 1:
-                RightPath rightPath = new RightPath(name);
-                rightPath.rightPath2(name);
+                StoryEnders storyEnders = new StoryEnders(name);
+                storyEnders.storyEnder2(name);
                 break;
             case 2:
                 stopAtLake(name);
-
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");
@@ -53,7 +52,32 @@ public class LeftPath {
     public void stopAtLake(String name) {
         Console.print("%s ran and ran until they reached the lake at the edge of Grandma's property.\n" +
                 "The sneaky wolf knew %s must be going to visit Grandma. \n" +
-                "So he took the super secret back way to beat %s there.", name, name, name);
+                "So he took the super secret back way to beat %s to Grandma's house.", name, name, name);
+        lakeDecision(name);
+    }
 
+    public void lakeDecision(String name) {
+        selection = Console.getIntegerInput("The lake was blue and beautiful.\n" +
+                "%s saw something shiny in the water.\n\n" +
+                "---------------------------------------\n\n" +
+                "1. Pick up the shiny thing\n" +
+                "2. Ignore the shiny thing and walk away", name);
+        pickUpShiny(selection, name);
+    }
+
+    public void pickUpShiny(Integer selection, String name){
+        switch (selection){
+            case 1:
+                StoryEnders storyEnders = new StoryEnders(name);
+                storyEnders.storyEnder3(name);
+                break;
+            case 2:
+                fishGetTeeth(name);
+                break;
+            default:
+                Console.println("Incorrect selection. Please try again.\n");
+                lakeDecision(name);
+                break;
+        }
     }
 }

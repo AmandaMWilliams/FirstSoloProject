@@ -45,4 +45,18 @@ public class StoryEnders {
                 "~ THE END ~\n" +
                 "Moral: Respect your elders. Stay safe.\n\n", name, name, name);
     }
+
+    public void storyEnderEatCookiesWithGrandma(String name) {
+        Console.print("\n%s was so happy to see Grandma.\n" +
+                "\"We're safe now, Grandma. And I found your teeth!\"\n" +
+                "%s handed Grandma *GrandmasTeeth*.\n" +
+                "The two sat and ate cookies together.\n\n" +
+                "--------------------------------------------\n\n" +
+                "~ THE END ~\n" +
+                "Great story!!! See you next time!\n\n", name, name);
+    }
+
+    public void getEaten(String name) {
+
+    }
 }

@@ -3,6 +3,8 @@ package InteractiveStory.story;
 import InteractiveStory.player.Reader;
 import InteractiveStory.tools.Console;
 
+import java.lang.invoke.SwitchPoint;
+
 public class StoryContinuers {
     private Reader reader;
     private Integer selection;
@@ -91,7 +93,7 @@ public class StoryContinuers {
     }
 
     private void madeItToGrandmasDecision(String name) {
-        selection = Console.getIntegerInput("%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
+        selection = Console.getIntegerInput("\n%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
                 "* Knock-knock *\n.\n..\n...\n..\n.\n* Knock-knock *\n\n" +
                 "\"Grandma, I'm here.\" said %s.\n\n" +
                 "\"Come in, my dear\" said the voice from inside.\n\n" +
@@ -105,8 +107,7 @@ public class StoryContinuers {
     private void enterGrandmasHouseSwitch(Integer selection, String name) {
         switch (selection) {
             case 1:
-//                fishGetTeeth(name);
-//                madeItToGrandmas(name);
+                encounterGrandma(name);
                 break;
             case 2:
                 StoryEnders storyEnders = new StoryEnders(name);
@@ -117,6 +118,84 @@ public class StoryContinuers {
                 madeItToGrandmasDecision(name);
                 break;
         }
+    }
+
+    private void encounterGrandma(String name) {
+        Console.print("\n%s walked into Grandma's house.\n" +
+                "Poor old Grandma was lying in bed all covered up.\n\n", name);
+        grandmaWolfDecision(name);
+    }
+
+    private void grandmaWolfDecision(String name) {
+        selection = Console.getIntegerInput("Grandma is looking very strange.\n\n" +
+                "------------------------------------\n\n" +
+                "1. Comment on Grandma's appearance\n" +
+                "2. Show Grandma all the cool stuff you brought\n", name);
+        grandmaAppearanceSwitch(selection, name);
+    }
+
+    private void grandmaAppearanceSwitch(Integer selection, String name) {
+        switch (selection) {
+            case 1:
+                whatBigEyes(name);
+                break;
+            case 2:
+                showGoods(name);
+                break;
+            default:
+                Console.println("Incorrect selection. Please try again.\n");
+                grandmaWolfDecision(name);
+        }
+    }
+
+    private void whatBigEyes(String name) {
+        Console.print("\n\"Grandma, what big eyes you have\" said %s.\n" +
+                "\"The better to see you with, my dear.\" replied Grandma blinking her big black eyes.\n" +
+                "\"Grandma, what big ears you have\" said %s.\n" +
+                "\"The better to hear you with, my dear.\" said Grandma wiggling her big pointy ears.\n" +
+                "\"Grandma, what big teeth you have\" said %s.\n" +
+                "\"The better to eat you with, my dear!!!\"\n\n", name, name, name);
+        wolfAttackDecision(name);
+    }
+
+    private void showGoods(String name) {
+        //show teeth first, notice wolfGrandma has teeth
+        //Offer switch to get chancleta
+        //Beat wolf and rescue grandma, give teeth, eat cookies
+    }
+
+    private void wolfAttackDecision(String name) {
+        selection = Console.getIntegerInput("Grandma leaped out of bed toward %s. It was THE WOLF!!!\n\n" +
+                "------------------------------------------\n\n" +
+                "1. Use *chancleta* to hit wolf\n" +
+                "2. Let the wolf eat you\n", name);
+        wolfAttackSwitch(selection, name);
+    }
+
+    private void wolfAttackSwitch(Integer selection, String name) {
+        switch (selection){
+            case 1:
+                //remove chancleta from itemInventory
+                fightStoryline(name);
+            case 2:
+                StoryEnders storyEnders = new StoryEnders(name);
+                storyEnders.getEaten(name);
+            default:
+                Console.println("Incorrect selection. Please try again.\n");
+                wolfAttackDecision(name);
+        }
+    }
+
+    private void fightStoryline(String name) {
+        Console.print("\n%s reacted quickly!\n" +
+                "The second The Wolf lunged, %s whipped out the *chancleta* and smacked The Wolf into submission!!!\n" +
+                "The Wolf ran away screaming and crying.\n" +
+                "VICTORY!!!\n\n" +
+                "Just then %s heard a rumble from inside the closet.\n" +
+                "*chancleta* in hand, %s bravely opened the closet door.\n" +
+                "It was Grandma! Safe and sound.\n\n", name, name, name, name);
+        StoryEnders storyEnders = new StoryEnders(name);
+        storyEnders.storyEnderEatCookiesWithGrandma(name);
     }
 
 

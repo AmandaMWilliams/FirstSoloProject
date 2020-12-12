@@ -14,7 +14,7 @@ public class StoryEnders {
                 "Mami jumped out from behind a tree and popped %s with the chancleta.\n" +
                 "%s is grounded.\n\n" +
                 "--------------------------------------------\n\n" +
-                "THE END\n" +
+                "~ THE END ~\n" +
                 "Moral: Do not choose a path that is obviously wrong. Stay safe.\n\n", name, name, name);
     }
 
@@ -23,7 +23,7 @@ public class StoryEnders {
                 "Mami jumped out from behind a tree and popped %s with the chancleta.\n" +
                 "%s is grounded.\n\n" +
                 "--------------------------------------------\n\n" +
-                "THE END\n" +
+                "~ THE END ~\n" +
                 "Moral: Do not talk to strangers. Stay safe.\n\n", name, name, name);
     }
 
@@ -32,7 +32,7 @@ public class StoryEnders {
                 "Mami surfaced from under the water and popped %s with the chancleta.\n" +
                 "%s is grounded.\n\n" +
                 "--------------------------------------------\n\n" +
-                "THE END\n" +
+                "~ THE END ~\n" +
                 "Moral: Do not touch anything you do not recognize. Stay safe.\n\n", name, name, name);
     }
 }

@@ -28,8 +28,13 @@ public class Console {
         return userInput;
     }
 
-    public static Integer getIntegerInput(String prompt, Object... args) {
-        return getDoubleInput(prompt, args).intValue();  //take the Double value, convert to an int, and return int
+    public static Integer getIntegerInput(String prompt, Object... args) { //take the Double value, convert to an int, and return int
+        try {
+            return getDoubleInput(prompt, args).intValue();
+        } catch (Exception e){
+            println("Invalid Input.");
+            return getIntegerInput(prompt, args);
+        }
     }
 
     public static Double getDoubleInput(String prompt, Object... args) {

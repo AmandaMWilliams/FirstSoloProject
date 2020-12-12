@@ -38,7 +38,7 @@ public class StoryEnders {
 
     public void storyEnderSassGrandma(String name) {
         Console.print("\n\"Grandma, my hands are full of cookie baskets and arbitrary items I found in the woods.\n" +
-                "  Open the door for me please.\" said %s.\n" +
+                " Open the door for me please.\" said %s.\n" +
                 "Mami jumped out from behind a bush and popped %s with the chancleta for over-exerting Grandma.\n" +
                 "%s is grounded.\n\n" +
                 "--------------------------------------------\n\n" +

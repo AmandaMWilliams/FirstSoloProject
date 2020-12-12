@@ -21,8 +21,8 @@ public class Display extends Storyline {
     public void userWelcome(String name) {
         console.print("Hi, " + name + ". Let's start the story.\n\n");
         name = "Little Red Riding " + name;
-        storyScript1(name);
-        storyDecision1(name);
+        storyLineStart1(name);
+        choosePathDecision1(name);
     }
 
 

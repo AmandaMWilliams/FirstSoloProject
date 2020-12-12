@@ -30,21 +30,21 @@ public class StoryContinuers {
                         "---------------------------------------------\n\n"
                         + "1. Talk to the wolf\n"
                         + "2. Run away", name, name);
-        encounterWolf(selection, name);
+        encounterWolfSwitch(selection, name);
     }
 
-    public void encounterWolf(Integer selection, String name) {
+    public void encounterWolfSwitch(Integer selection, String name) {
         switch (selection) {
             case 1:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.storyEnderWolfChat(name);
+                storyEnders.storyEnderWolfChat(name);  //End Game
                 break;
             case 2:
-                stopAtLake(name);
+                stopAtLake(name);  //Continue to next method
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");
-                getWolfDecision(name);
+                getWolfDecision(name);  //Circle to previous decision menu
                 break;
         }
     }
@@ -62,22 +62,22 @@ public class StoryContinuers {
                 "---------------------------------------\n\n" +
                 "1. Pick up the shiny thing\n" +
                 "2. Ignore the shiny thing and walk away", name);
-        pickUpShiny(selection, name);
+        pickUpShinySwitch(selection, name);
     }
 
-    public void pickUpShiny(Integer selection, String name) {
+    public void pickUpShinySwitch(Integer selection, String name) {
         switch (selection) {
             case 1:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.storyEnderReachIntoWater(name);
+                storyEnders.storyEnderReachIntoWater(name);  //End Game
                 break;
             case 2:
                 fishGetTeeth(name);
-                madeItToGrandmas(name);
+                madeItToGrandmasDecision(name);
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");
-                lakeDecision(name);
+                lakeDecision(name); //Circle to previous decision menu
                 break;
         }
     }
@@ -90,7 +90,7 @@ public class StoryContinuers {
         reader.add("Grandma's teeth");
     }
 
-    private void madeItToGrandmas(String name) {
+    private void madeItToGrandmasDecision(String name) {
         selection = Console.getIntegerInput("%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
                 "* Knock-knock *\n.\n..\n...\n..\n.\n* Knock-knock *\n\n" +
                 "\"Grandma, I'm here.\" said %s.\n\n" +
@@ -114,8 +114,10 @@ public class StoryContinuers {
                 break;
             default:
                 Console.println("Incorrect selection. Please try again.\n");
-              //  lakeDecision(name);
+                madeItToGrandmasDecision(name);
                 break;
         }
     }
+
+
 }

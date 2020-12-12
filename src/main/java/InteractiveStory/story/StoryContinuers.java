@@ -91,7 +91,7 @@ public class StoryContinuers {
     }
 
     private void madeItToGrandmas(String name) {
-        Console.getIntegerInput("%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
+        selection = Console.getIntegerInput("%s rubbed their head, and walked up the little path to Grandma's front door.\n" +
                 "* Knock-knock *\n.\n..\n...\n..\n.\n* Knock-knock *\n\n" +
                 "\"Grandma, I'm here.\" said %s.\n\n" +
                 "\"Come in, my dear\" said the voice from inside.\n\n" +
@@ -99,5 +99,23 @@ public class StoryContinuers {
                 "1. Open the door and go inside\n" +
                 "2. Tell Grandma your hands are full from gathering random stuff in the woods\n" +
                 "    and make her open the door for you.", name, name);
+        enterGrandmasHouseSwitch(selection, name);
+    }
+
+    private void enterGrandmasHouseSwitch(Integer selection, String name) {
+        switch (selection) {
+            case 1:
+//                fishGetTeeth(name);
+//                madeItToGrandmas(name);
+                break;
+            case 2:
+                StoryEnders storyEnders = new StoryEnders(name);
+                storyEnders.storyEnderSassGrandma(name);
+                break;
+            default:
+                Console.println("Incorrect selection. Please try again.\n");
+              //  lakeDecision(name);
+                break;
+        }
     }
 }

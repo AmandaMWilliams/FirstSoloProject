@@ -3,8 +3,6 @@ package InteractiveStory.story;
 import InteractiveStory.player.Reader;
 import InteractiveStory.tools.Console;
 
-import java.lang.invoke.SwitchPoint;
-
 public class StoryContinuers {
     private Reader reader;
     private Integer selection;
@@ -52,7 +50,7 @@ public class StoryContinuers {
     }
 
     public void stopAtLake(String name) {
-        Console.print("\n%s ran and ran until they reached the lake at the edge of Grandma's property.\n" +
+        Console.print("\n%s ran and ran until finally reaching the lake at the edge of Grandma's property.\n" +
                 "The sneaky wolf knew %s must be going to visit Grandma. \n" +
                 "So he took the super secret back way to beat %s to Grandma's house.\n\n", name, name, name);
         lakeDecision(name);
@@ -63,7 +61,7 @@ public class StoryContinuers {
                 "%s saw something shiny in the water.\n\n" +
                 "---------------------------------------\n\n" +
                 "1. Pick up the shiny thing\n" +
-                "2. Ignore the shiny thing and walk away", name);
+                "2. Mind your business and chill for a minute", name);
         pickUpShinySwitch(selection, name);
     }
 
@@ -85,7 +83,7 @@ public class StoryContinuers {
     }
 
     private void fishGetTeeth(String name) {
-        Console.print("\n%s finished resting and began to walk away toward Grandma's.\n" +
+        Console.print("\n%s finished resting and began to walk again toward Grandma's.\n" +
                 "Just as %s turned, a fish swam passed the shiny object,\n" +
                 "launching it from the water, and hitting %s in the head.\n" +
                 "%s found a Grandma's teeth!\n", name, name, name, name);
@@ -159,9 +157,11 @@ public class StoryContinuers {
     }
 
     private void showGoods(String name) {
-        //show teeth first, notice wolfGrandma has teeth
-        //Offer switch to get chancleta
-        //Beat wolf and rescue grandma, give teeth, eat cookies
+        Console.print("\n%s pulled out *Grandma\'s teeth*\n" +
+                "\"Grandma, I found your teeth outside! I know they're yours because the left Lateral Incisor is gold.\"\n" +
+                "But %s realized Grandma already had teeth...\n" +
+                "Big SHARP TEETH!\n\n", name, name);
+        wolfAttackDecision(name);
     }
 
     private void wolfAttackDecision(String name) {
@@ -175,11 +175,11 @@ public class StoryContinuers {
     private void wolfAttackSwitch(Integer selection, String name) {
         switch (selection){
             case 1:
-                //remove chancleta from itemInventory
+               // itemInventory.removeItem("chancleta");
                 fightStoryline(name);
             case 2:
                 StoryEnders storyEnders = new StoryEnders(name);
-                storyEnders.getEaten(name);
+                storyEnders.getEaten();
             default:
                 Console.println("Incorrect selection. Please try again.\n");
                 wolfAttackDecision(name);
@@ -188,7 +188,7 @@ public class StoryContinuers {
 
     private void fightStoryline(String name) {
         Console.print("\n%s reacted quickly!\n" +
-                "The second The Wolf lunged, %s whipped out the *chancleta* and smacked The Wolf into submission!!!\n" +
+                "The Wolf lunged, and %s whipped out the *chancleta* and smacked The Wolf into submission!!!\n" +
                 "The Wolf ran away screaming and crying.\n" +
                 "VICTORY!!!\n\n" +
                 "Just then %s heard a rumble from inside the closet.\n" +
@@ -197,6 +197,4 @@ public class StoryContinuers {
         StoryEnders storyEnders = new StoryEnders(name);
         storyEnders.storyEnderEatCookiesWithGrandma(name);
     }
-
-
 }

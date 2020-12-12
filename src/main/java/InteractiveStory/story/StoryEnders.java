@@ -47,16 +47,17 @@ public class StoryEnders {
     }
 
     public void storyEnderEatCookiesWithGrandma(String name) {
-        Console.print("\n%s was so happy to see Grandma.\n" +
+        Console.print("%s was so happy to see Grandma.\n" +
                 "\"We're safe now, Grandma. And I found your teeth!\"\n" +
-                "%s handed Grandma *GrandmasTeeth*.\n" +
+                "%s handed Grandma *Grandma\'s teeth*.\n" +
                 "The two sat and ate cookies together.\n\n" +
                 "--------------------------------------------\n\n" +
                 "~ THE END ~\n" +
                 "Great story!!! See you next time!\n\n", name, name);
     }
 
-    public void getEaten(String name) {
-
+    public void getEaten() {
+        Console.print("Wow, you straight-up chose to get eaten... Noted...\n\n" +
+                "The End, Weirdo.\n");
     }
 }

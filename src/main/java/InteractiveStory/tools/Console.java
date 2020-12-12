@@ -29,10 +29,11 @@ public class Console {
     }
 
     public static Integer getIntegerInput(String prompt, Object... args) { //take the Double value, convert to an int, and return int
+        Object userInput = null;
         try {
             return getDoubleInput(prompt, args).intValue();
         } catch (Exception e){
-            println("Invalid Input.");
+            println("%s is an Invalid Input.", userInput);
             return getIntegerInput(prompt, args);
         }
     }

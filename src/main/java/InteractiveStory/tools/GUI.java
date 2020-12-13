@@ -43,6 +43,7 @@ public class GUI {
         startButton.setForeground(Color.GRAY);
         startButton.setFont(buttonFont);
         startButton.addActionListener(tsHandler);
+        startButton.setFocusPainted(false);
 
         startingPanel.add(text);
         startButtonPanel.add(startButton);
@@ -78,12 +79,14 @@ public class GUI {
         choice1.setBackground(Color.white);
         choice1.setForeground(Color.gray);
         choice1.setFont(buttonFont);
+        choice1.setFocusPainted(false);
         choiceButtonPanel.add(choice1);
 
         choice2 = new JButton("Choice 2");
         choice2.setBackground(Color.white);
         choice2.setForeground(Color.gray);
         choice2.setFont(buttonFont);
+        choice2.setFocusPainted(false);
         choiceButtonPanel.add(choice2);
 
 

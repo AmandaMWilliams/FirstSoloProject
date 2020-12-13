@@ -16,13 +16,6 @@ public class Storyline {
         );
     }
 
-    public String abortMission() {
-        return Console.getStringInput("Would you like to continue to Grandma's house or run home to Mami?\n" +
-                "1. Proceed\n" +
-                "2. Go home"
-        );
-    }
-
     public void choosePathDecision1(String name) {
         Integer selection = Console.getIntegerInput("Would you like to take the left path of light, or the right path of despair? \n" +
                 "1. Left Path\n" +
